@@ -22,8 +22,15 @@ public class CustomQueue {
     }
 
     public String dequeue() {
+        if (isEmpty()) {
+//            throw Exception
+        }
         String item = first.getValue();
         first = first.getNext();
         return item;
+    }
+
+    public boolean isEmpty() {
+        return first == null;
     }
 }
