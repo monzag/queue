@@ -33,4 +33,15 @@ public class CustomQueue {
     public boolean isEmpty() {
         return first == null;
     }
+    
+    public int getQueueSize() {
+        int size = 0;
+        Node node = first;
+        while (node != null) {
+            node = node.getNext();
+            size++;
+        }
+
+        return size;
+    }
 }
