@@ -18,6 +18,9 @@ public class CustomQueue {
     }
 
     public Node peek() {
+        if (isEmpty()) {
+//            throw Exception
+        }
         return first;
     }
 
@@ -33,7 +36,7 @@ public class CustomQueue {
     public boolean isEmpty() {
         return first == null;
     }
-    
+
     public int getQueueSize() {
         int size = 0;
         Node node = first;
