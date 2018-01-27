@@ -10,7 +10,7 @@ public class CustomQueue {
         if (first == null) {
             first = newItem;
             last = first;
-            
+
         } else {
             last.setNext(newItem);
             last = newItem;
@@ -18,7 +18,7 @@ public class CustomQueue {
     }
 
     public Node peek() {
-
+        return first;
     }
 
     public String dequeue() {
