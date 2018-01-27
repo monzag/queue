@@ -22,6 +22,8 @@ public class CustomQueue {
     }
 
     public String dequeue() {
-
+        String item = first.getValue();
+        first = first.getNext();
+        return item;
     }
 }
