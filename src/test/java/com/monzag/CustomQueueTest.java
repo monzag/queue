@@ -51,6 +51,17 @@ class CustomQueueTest {
         assertEquals(expect, queue.dequeue());
     }
 
+    @Test
+    void enqueueTest() {
+        queue.enqueue("a4", 1);
+        queue.enqueue("a5", 2);
+        queue.enqueue("a1", 1);
+        queue.enqueue("a2", 2);
+        queue.enqueue("a3", 3);
+        String expect = "a1 a2 a3 a4 a5";
+        assertEquals(expect, queue.toString());
+    }
+
     private void addDataToQueue() {
         for (int i = 0; i < 6; i++) {
             Integer priority = null;
