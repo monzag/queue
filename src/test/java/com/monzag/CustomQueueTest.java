@@ -58,7 +58,8 @@ class CustomQueueTest {
         queue.enqueue("a1", 1);
         queue.enqueue("a2", 2);
         queue.enqueue("a3", 3);
-        String expect = "a1 a2 a3 a4 a5";
+        queue.enqueue("a50", 50);
+        String expect = "a1 a2 a3 a4 a5 a50";
         assertEquals(expect, queue.toString());
     }
 
