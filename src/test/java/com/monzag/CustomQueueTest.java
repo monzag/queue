@@ -43,6 +43,14 @@ class CustomQueueTest {
         assertThrows(EmptyQueueException.class, () -> queue.dequeue());
     }
 
+    @Test
+    void dequeueTest() throws EmptyQueueException {
+        addDataToQueue();
+        queue.dequeue();
+        String expect = "a1";
+        assertEquals(expect, queue.dequeue());
+    }
+
     private void addDataToQueue() {
         for (int i = 0; i < 6; i++) {
             Integer priority = null;
