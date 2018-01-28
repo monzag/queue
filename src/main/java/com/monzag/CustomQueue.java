@@ -11,30 +11,38 @@ public class CustomQueue {
             first = newItem;
             last = first;
 
-        } else if (priority == null || priority >= getQueueSize() - 1) {
-            last.setNext(newItem);
-            last = newItem;
-
-        } else if (priority == 1) {
-            newItem.setNext(first);
-            first = newItem;
-
         } else {
-            enqueueWithPriorityInTheMiddle(newItem);
+
+            if (priority == null) {
+                last.setNext(newItem);
+                last = newItem;
+
+            } else if (priority == 1) {
+                newItem.setNext(first);
+                first = newItem;
+
+            } else {
+                enqueueWithPriorityInTheMiddle(newItem);
+            }
         }
+
     }
 
     private void enqueueWithPriorityInTheMiddle(Node newItem) {
         Node current = first;
         for (int i = 1; i < newItem.getPriority(); i++) {
-            current = current.getNext();
-            if (current == null) {
-                current = newItem;
+            if (current.getNext() == null) {
+                current.setNext(newItem);
                 i = newItem.getPriority();
+            } else {
+                if (i == newItem.getPriority() - 1) {
+                    newItem.setNext(current.getNext());
+                    current.setNext(newItem);
+                } else {
+                    current = current.getNext();
+                }
             }
         }
-        newItem.setNext(current.getNext());
-        current.setNext(newItem);
     }
 
     public Node peek() throws EmptyQueueException {
