@@ -18,7 +18,13 @@ class CustomQueueTest {
     void isEmptyTest() {
         assertTrue(queue.isEmpty());
     }
-
+    
+    @Test
+    void getQueueSizeTest() {
+        addDataToQueue();
+        int expect = 6;
+        assertEquals(expect, queue.getQueueSize());
+    }
 
     private void addDataToQueue() {
         for (int i = 0; i < 6; i++) {
