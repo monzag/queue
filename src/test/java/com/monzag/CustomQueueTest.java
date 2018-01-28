@@ -19,4 +19,12 @@ class CustomQueueTest {
         assertTrue(queue.isEmpty());
     }
 
+
+    private void addDataToQueue() {
+        for (int i = 0; i < 6; i++) {
+            Integer priority = null;
+            queue.enqueue("a" + i, priority);
+        }
+    }
+
 }
