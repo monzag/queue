@@ -67,4 +67,17 @@ public class CustomQueue {
 
         return size;
     }
+
+    @Override
+    public String toString() {
+        String output = "";
+
+        Node current = first;
+        while (current != null) {
+            output += current.getValue() + " ";
+            current = current.getNext();
+        }
+
+        return output.substring(0, output.length() - 1);
+    }
 }
