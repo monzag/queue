@@ -37,16 +37,16 @@ public class CustomQueue {
         current.setNext(newItem);
     }
 
-    public Node peek() {
+    public Node peek() throws EmptyQueueException {
         if (isEmpty()) {
-//            throw Exception
+            throw new EmptyQueueException();
         }
         return first;
     }
 
-    public String dequeue() {
+    public String dequeue() throws EmptyQueueException {
         if (isEmpty()) {
-//            throw Exception
+            throw new EmptyQueueException();
         }
         String item = first.getValue();
         first = first.getNext();
