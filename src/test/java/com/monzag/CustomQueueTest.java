@@ -31,6 +31,13 @@ class CustomQueueTest {
         assertThrows(EmptyQueueException.class, () -> queue.peek());
     }
 
+    @Test
+    void peekTest() throws EmptyQueueException {
+        addDataToQueue();
+        String expect = "a0";
+        assertEquals(expect, queue.peek().getValue());
+    }
+
     private void addDataToQueue() {
         for (int i = 0; i < 6; i++) {
             Integer priority = null;
