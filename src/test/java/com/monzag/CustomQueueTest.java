@@ -38,6 +38,11 @@ class CustomQueueTest {
         assertEquals(expect, queue.peek().getValue());
     }
 
+    @Test
+    void dequeueFromEmptyQueueTest() {
+        assertThrows(EmptyQueueException.class, () -> queue.dequeue());
+    }
+
     private void addDataToQueue() {
         for (int i = 0; i < 6; i++) {
             Integer priority = null;
